@@ -7,7 +7,10 @@ app = Flask(__name__)
 def index():
 
     # Lê o Excel
-    df = pd.read_excel('Lista_imoveis_geral.xlsm')
+    df = pd.read_excel(
+    "Lista_imoveis_geral.xlsx",
+    engine="openpyxl"
+    )   
 
     # Remove espaços dos nomes das colunas
     df.columns = [str(c).strip() for c in df.columns]
